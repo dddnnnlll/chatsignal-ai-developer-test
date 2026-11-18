@@ -3,5 +3,6 @@ __pycache__/
 *.sqlite3
 *.zip
 FORM_DRAFT.md
-ChatSignal_preview.png
+*.png
+*.log
 .tools/

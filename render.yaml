@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: chatsignal-ai-developer-test
+    runtime: python
+    plan: free
+    buildCommand: python --version
+    startCommand: python app.py
+    healthCheckPath: /api/health
+    autoDeployTrigger: off
