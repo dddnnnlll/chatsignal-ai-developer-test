@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10182d">
+  <title>ChatSignal — рабочие диалоги под контролем</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-icon">✳</div><div>ChatSignal<small>Командный мониторинг</small></div></div>
+      <div class="side-label">РАБОЧЕЕ ПРОСТРАНСТВО</div>
+      <nav><a class="active" href="#dashboard">◫ <span>Обзор</span></a><a href="#conversations">◉ <span>Диалоги</span></a><a href="#alerts">◇ <span>Сигналы</span></a></nav>
+      <div class="sidebar-note"><span class="pulse"></span> Демо на синтетических данных</div>
+    </aside>
+    <main>
+      <header><div><div class="eyebrow">КОМАНДНЫЕ ДИАЛОГИ / ОБЗОР</div><h1>Не теряйте важное в переписке</h1><p>Вопросы клиентов и обещания команды в одном рабочем списке.</p></div><div class="status"><span class="pulse"></span> Сервис работает</div></header>
+      <section class="metrics" id="dashboard">
+        <article class="metric"><div>Открытые вопросы</div><strong id="question-count">–</strong><small>ждут ответа команды</small></article>
+        <article class="metric"><div>Обязательства</div><strong id="commitment-count">–</strong><small>нужно выполнить</small></article>
+        <article class="metric"><div>Закрыто</div><strong id="done-count">–</strong><small>сигналов обработано</small></article>
+      </section>
+      <div class="workspace">
+        <section class="panel chats" id="conversations"><div class="panel-heading"><div><span class="eyebrow">ИСТОЧНИК</span><h2>Диалоги</h2></div><span class="count" id="chat-count">0</span></div><div id="chat-list" class="chat-list"></div></section>
+        <section class="panel thread"><div class="panel-heading"><div><span class="eyebrow">ПЕРЕПИСКА</span><h2 id="thread-title">Выберите диалог</h2><p id="thread-context"></p></div></div><div id="messages" class="messages"></div><form id="message-form" class="composer"><label for="author">От имени</label><select id="author" name="author"><option value="client">Клиента</option><option value="team">Команды</option></select><label for="message">Сообщение</label><textarea id="message" name="message" placeholder="Например, Когда будет ответ?" maxlength="2000" required></textarea><button type="submit">Добавить сообщение <span>↗</span></button></form></section>
+        <section class="panel signals" id="alerts"><div class="panel-heading"><div><span class="eyebrow">ТРЕБУЕТ ВНИМАНИЯ</span><h2>Сигналы</h2></div><div class="tabs"><button type="button" class="selected" data-filter="open">Открытые</button><button type="button" data-filter="all">Все</button></div></div><div id="alert-list" class="alert-list"></div></section>
+      </div>
+      <footer>Прототип для проверки. Данные вымышлены, внешние сервисы не используются.</footer>
+    </main>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
