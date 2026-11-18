@@ -4,3 +4,4 @@ __pycache__/
 *.zip
 FORM_DRAFT.md
 ChatSignal_preview.png
+.tools/
